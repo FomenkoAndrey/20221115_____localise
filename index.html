@@ -3,17 +3,69 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Lokalise</title>
+  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/img/favicon.svg" rel="icon">
 </head>
 
 <body>
 
+<header class="header container">
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-  <script src="assets/js/main.js"></script>
+  <div class="header-menu">
+    <div class="header-menu__logo header-logo">
+      <img alt="logo" class="header-logo__image" src="assets/img/logo.svg">
+    </div>
+
+    <nav class="header-menu__navbar header-navbar">
+      <div class="header-navbar__btn">
+        <span class="header-navbar__btn-row"></span>
+        <span class="header-navbar__btn-row"></span>
+        <span class="header-navbar__btn-row"></span>
+      </div>
+
+      <ol class="header-navbar__list">
+        <li class="header-navbar__item">
+          <a class="header-navbar__link" href="">Product</a>
+        </li>
+        <li class="header-navbar__item">
+          <a class="header-navbar__link" href="">Features</a>
+        </li>
+        <li class="header-navbar__item">
+          <a class="header-navbar__link" href="">Pricing</a>
+        </li>
+        <li class="header-navbar__item">
+          <a class="header-navbar__link" href="">Case studies</a>
+        </li>
+        <li class="header-navbar__item">
+          <a class="header-navbar__link" href="">Resources</a>
+        </li>
+      </ol>
+    </nav>
+
+    <div class="header-menu__actions header-actions">
+      <button class="btn btn--light btn--sm">Log in</button>
+      <button class="btn btn--accent btn--sm">Try it free</button>
+    </div>
+  </div>
+
+  <div class="header-content">
+    <h1 class="header-content__title"></h1>
+    <div class="header-content__description"></div>
+    <div class="header-content__actions"></div>
+    <div class="header-content__notes"></div>
+    <div class="header-content__picture">
+      <img alt="" class="header-content__image" src="assets/img/hero.png">
+    </div>
+  </div>
+
+</header>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script src="assets/js/main.js"></script>
 
 </body>
 
