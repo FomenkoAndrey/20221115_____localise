@@ -5,3 +5,37 @@
   width: min(100% - 40px, 1340px);
   margin-inline: auto;
 }
+
+.btn {
+  border-width: 1px;
+  border-style: solid;
+
+  font-weight: 600;
+  font-size: 16px;
+
+  &--light {
+    background-color: $color-white;
+    border-color: rgba($color-black, 0.5);
+  }
+
+  &--accent {
+    color: $color-white;
+    background-color: $color-accent;
+    border-color: $color-accent;
+  }
+
+  &--sm {
+    min-width: 120px;
+    @include lg-min {
+      min-height: 45px;
+    }
+    @include lg {
+      min-height: 40px;
+    }
+  }
+
+  &--md {
+    min-width: 160px;
+    min-height: 60px;
+  }
+}

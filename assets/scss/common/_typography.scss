@@ -9,19 +9,33 @@
 
 html {
   font-size: $font-size-root;
+  overflow-y: scroll;
 }
 
 body {
   font-size: $font-size-inherit;
   font-family: $font-family;
+  overflow-x: hidden;
 }
 
 a {
   text-decoration: none;
+  color: $color-black;
 }
 
 h1 {
+  font-weight: 600;
+  line-height: 1.08;
 
+  @include xl-min {
+    font-size: 65px;
+  }
+  @include xl-lg {
+    font-size: 50px;
+  }
+  @include lg {
+    font-size: 40px;
+  }
 }
 
 h2 {
