@@ -7,5 +7,9 @@
   "license": "MIT",
   "dependencies": {
     "normalize.css": "^8.0.1"
+  },
+  "devDependencies": {
+    "cssnano": "^5.1.14",
+    "gulp-rename": "^2.0.0"
   }
 }

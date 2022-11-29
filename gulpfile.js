@@ -4,6 +4,8 @@ const dc = require('postcss-discard-comments');
 const browserSync = require('browser-sync');
 const postcss = require('gulp-postcss');
 const csscomb = require('gulp-csscomb');
+const cssnano = require('cssnano');
+const rename = require('gulp-rename');
 const autoprefixer = require('autoprefixer');
 const mqpacker = require('css-mqpacker');
 const sortCSSmq = require('sort-css-media-queries');
@@ -44,6 +46,18 @@ function scss() {
     .pipe(dest(PATH.cssFolder))
     .pipe(browserSync.stream());
 }
+
+function scssMin() {
+  const pluginsExtended = [...PLUGINS, cssnano({preset: 'default'})];
+
+  return src(PATH.scssRoot)
+    .pipe(sass().on('error', sass.logError))
+    .pipe(csscomb())
+    .pipe(postcss(pluginsExtended))
+    .pipe(rename({ suffix: '.min' }))
+    .pipe(dest(PATH.cssFolder))
+}
+
 function scssDev() {
   const pluginsForDevMode = [...PLUGINS]
 
@@ -75,7 +89,7 @@ async function sync() {
 
 function watchFiles() {
   syncInit();
-  if (!option) watch(PATH.scssFiles, series(scss));
+  if (!option) watch(PATH.scssFiles, series(scss, scssMin));
   if (option === '--dev') watch(PATH.scssFiles, series(scssDev));
   if (option === '--css') watch(PATH.cssFiles, sync);
   watch(PATH.htmlFiles, sync);
@@ -118,6 +132,7 @@ function createStructure() {
 }
 
 task('comb', series(comb));
+task('min', series(scssMin));
 task('scss', series(scss));
 task('dev', series(scssDev));
 task('cs', series(createStructure));
